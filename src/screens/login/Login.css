@@ -1,0 +1,25 @@
+.cardStyle {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-right: 30%;
+    margin-left: 30%;
+    width: 40%;
+}
+.loginLabel{
+    font-size: small;
+}
+.loginButton{
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+
+}
+.dispNone{
+    display: none;
+}
+.dispBlock{
+    display: block;
+}
