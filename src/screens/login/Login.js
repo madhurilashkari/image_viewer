@@ -28,8 +28,18 @@ class Login extends Component {
     }
 
     loginClickHandler = (e) =>{
-        var dummyUsername="xyz";
-        var dummyPassword="xyz@123";
+        let dummyUsername="xyz";
+        let dummyPassword="xyz@123";
+
+        let accessToken = "8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784";
+
+        if (this.state.username === dummyUsername && this.state.password === dummyPassword) {
+            window.sessionStorage.setItem("access-token", accessToken);
+            /*this is the history object where the push method available in the history object is used
+             to redirecting the user to the Home page when a user logins successfully.*/
+            this.props.history.push('/home/');
+
+        }
 
         this.state.username === "" ? this.setState({usernameRequired :"dispBlock"}) : this.setState({usernameRequired :"dispNone"});
         this.state.password === "" ? this.setState({passwordRequired :"dispBlock"}) : this.setState({passwordRequired :"dispNone"});
