@@ -11,3 +11,15 @@
       font-size: 18px;
      
 }
+
+.avatar {
+    margin-left: auto;
+}
+
+.search{
+    
+    border-radius: 25px;
+    marginLeft: 0;
+    width: 300px;
+    background-color: #c0c0c0;
+}
