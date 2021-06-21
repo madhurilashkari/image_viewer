@@ -9,8 +9,16 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import './Login.css';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import {withStyles} from '@material-ui/core/styles';
 
 
+const styles = theme => ({
+    formControl: {
+        margin: theme.spacing.unit,
+        minWidth: 240,
+        maxWidth: 240
+     }
+});
 
 class Login extends Component {
     constructor() {
@@ -56,23 +64,24 @@ class Login extends Component {
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <div>
-                <Header />
+                <Header baseurl={this.props.baseurl} />
                 <div>
                     <Card variant="outlined" className='cardStyle'>
                         <CardContent >
                             <Typography variant='title'>
                                 LOGIN
                             </Typography><br />
-                            <FormControl required>
+                            <FormControl className={classes.formControl} required>
                                 <InputLabel className='loginLabel' htmlFor="username">Username</InputLabel>
                                 <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameChangeHandler} />
                                 <FormHelperText className={this.state.usernameRequired}>
                                     <span className='red'>required</span>
                                 </FormHelperText>
                             </FormControl><br />
-                            <FormControl required>
+                            <FormControl className={classes.formControl} required>
                                 <InputLabel htmlFor="password">Password</InputLabel>
                                 <Input id="password" type="password" password={this.state.password} onChange={this.inputPasswordChangeHandler}/>
                                 <FormHelperText className={this.state.passwordRequired}>
@@ -92,4 +101,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withStyles(styles)(Login);

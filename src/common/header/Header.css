@@ -7,19 +7,23 @@
 
 .app-logo {
     color: #fff;
-    vertical-align: middle;
+    float: left;
+    padding: 12px;
       font-size: 18px;
      
 }
 
-.avatar {
-    margin-left: auto;
+
+.app-right {
+    float:right;
+    margin-right: 50px;
+    margin-top:1px;
 }
 
-.search{
-    
-    border-radius: 25px;
-    marginLeft: 0;
-    width: 300px;
+#outlined-basic,#outlined-basic-control{
     background-color: #c0c0c0;
+    border-radius: 4px;
+    width: 200px;
+    height: 0.2px;
+    border: none;
 }

@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './common/header/Header';
 import './index.css';
-import Login from './screens/login/Login';
+import Controller from './screens/Controller'
+
 
 ReactDOM.render(
-    <Login /> ,
+    <React.StrictMode>
+    <Controller />
+  </React.StrictMode>,
     document.getElementById('root')
 );
