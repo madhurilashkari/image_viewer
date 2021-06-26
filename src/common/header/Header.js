@@ -7,6 +7,7 @@ import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import Avatar from "@material-ui/core/Avatar";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import instaLogo from "../../assets/insta.png";
 
 
 
@@ -37,6 +38,12 @@ class Header extends Component {
                   </InputAdornment>
                 }
                 disableUnderline={true}
+              />
+              <Avatar
+                alt="Remy Sharp"
+                src={instaLogo}
+                className="icon-large"
+              
               />
              
             </div>
