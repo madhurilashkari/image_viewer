@@ -30,7 +30,8 @@ class Login extends Component {
             username: "",
             passwordRequired: "dispNone",
             password: "",
-            usernamePasswordIncorrect :"dispNone"
+            usernamePasswordIncorrect :"dispNone",
+            loggedIn: sessionStorage.getItem("access-token") == null ? false : true
         }
     }
 

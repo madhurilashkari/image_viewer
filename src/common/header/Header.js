@@ -1,15 +1,12 @@
+
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import './Header.css';
-
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-
+import "./Header.css";
+import Input from "@material-ui/core/Input";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import { fade, withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import { Icon } from '@material-ui/core';
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import Avatar from "@material-ui/core/Avatar";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 
 
@@ -17,23 +14,32 @@ class Header extends Component {
 
   render() {
 
-
     return (
       <div>
         <div className='app-header'>
           <span className='app-logo'> Image Viewer</span>
-          <input placeholder='Search…'
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='end'>
-                  <SearchIcon />
-                  {/* <IconButton>
-                <Icon>search</Icon>
-              </IconButton> */}
-                </InputAdornment>
-              )
-            }} >
-          </input>
+
+          <div className="header-right">
+              <Input
+                id="search-box"
+                type="search"
+                className="search-field"
+                variant="outlined"
+                placeholder="Search…"
+                startAdornment={
+                  <InputAdornment
+                    variant="standard"
+                    position="start"
+                    id="searchBoxIcon"
+                    style={{ backgroundColor: "#c0c0c0" }}
+                  >
+                    <SearchOutlinedIcon />
+                  </InputAdornment>
+                }
+                disableUnderline={true}
+              />
+             
+            </div>
         </div>
 
 
