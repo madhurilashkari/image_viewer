@@ -30,8 +30,13 @@ class Login extends Component {
             username: "",
             passwordRequired: "dispNone",
             password: "",
+
             usernamePasswordIncorrect :"dispNone",
             loggedIn: sessionStorage.getItem("access-token") == null ? false : true
+
+            usernamePasswordIncorrect: "dispNone"
+
+
         }
     }
 
@@ -39,7 +44,11 @@ class Login extends Component {
         let dummyUsername="xyz";
         let dummyPassword="xyz@123";
 
+
         let accessToken = "IGQVJVUzV3dkVWaVFmUllOUzY0OVY0bjJId25TMGpteWlrMktaQUFZAWDFMNUg0SWtGU1ZAJZA2l2dGlEMUx6REpLWEhTNnZAvZA2c1bnlQRnF2M0NPU3hSdEM5SDNxZAXYyZAERPakdWUklHZAHo1aHpmRGdGckNEWklJQTZANd1RJ";
+
+        let accessToken = "8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784";
+
 
         if (this.state.username === dummyUsername && this.state.password === dummyPassword) {
             window.sessionStorage.setItem("access-token", accessToken);
@@ -56,7 +65,19 @@ class Login extends Component {
           
     }
 
+        }
+
+        this.state.username === "" ? this.setState({usernameRequired :"dispBlock"}) : this.setState({usernameRequired :"dispNone"});
+        this.state.password === "" ? this.setState({passwordRequired :"dispBlock"}) : this.setState({passwordRequired :"dispNone"});
+
+        (this.state.username !== dummyUsername || this.state.password !==dummyPassword) ?
+            this.setState({usernamePasswordIncorrect :"dispBlock"}) : this.setState({usernamePasswordIncorrect :"dispNone"});
+          
+      }
+
+
     inputUsernameChangeHandler = (e) => {
+        
         this.setState({ username: e.target.value });
     }
 
@@ -90,6 +111,8 @@ class Login extends Component {
                                 <FormHelperText className={this.state.passwordRequired}>
                                     <span className='red'>required</span>
                                 </FormHelperText>
+
+
                                 <FormHelperText className={this.state.usernamePasswordIncorrect}>
                                     <span className="red">Incorrect username and/or password</span>
                                 </FormHelperText>
