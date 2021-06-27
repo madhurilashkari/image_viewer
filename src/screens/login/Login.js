@@ -39,7 +39,7 @@ class Login extends Component {
         let dummyUsername="xyz";
         let dummyPassword="xyz@123";
 
-        let accessToken = "8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784";
+        let accessToken = "IGQVJVUzV3dkVWaVFmUllOUzY0OVY0bjJId25TMGpteWlrMktaQUFZAWDFMNUg0SWtGU1ZAJZA2l2dGlEMUx6REpLWEhTNnZAvZA2c1bnlQRnF2M0NPU3hSdEM5SDNxZAXYyZAERPakdWUklHZAHo1aHpmRGdGckNEWklJQTZANd1RJ";
 
         if (this.state.username === dummyUsername && this.state.password === dummyPassword) {
             window.sessionStorage.setItem("access-token", accessToken);
@@ -68,7 +68,9 @@ class Login extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <Header baseurl={this.props.baseurl} />
+                <Header  title="Image Viewer"
+          parent="login"
+          history={this.props.history} />
                 <div>
                     <Card variant="outlined" className='cardStyle'>
                         <CardContent >

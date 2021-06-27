@@ -100,37 +100,7 @@ const Header = (props) => {
                 </Menu>
               </div>
             )}
-            {
-              props.showProfilePage === "profile" && (
-                <div className="header-right">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={instaLogo}
-                    className="icon-large"
-                    onClick={handleClick}
-                  />
-                  <Menu
-                    id="fade-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                  >
-                    <MenuItem
-                      style={{
-                        fontSize: "medium",
-                        fontWeight: "bold",
-                        cursor: "pointer"
-                      }}
-                      onClick={() => {
-                        logoutClickHandler();
-                      }}
-                    >
-                      Logout
-                    </MenuItem>
-                  </Menu>
-                </div>
-              )}
+            
           </div>
         </header>
       </div>
