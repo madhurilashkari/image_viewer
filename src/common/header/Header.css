@@ -1,8 +1,8 @@
 .app-header {
-    display: flex;
+    
     background-color: #263238;
     height: 80px;
-    padding-top: 20px;
+    
 }
 
 .app-logo {
@@ -10,7 +10,7 @@
     float: left;
     padding: 25px;
     font-size: 18px;
-     
+    cursor: pointer; 
 }
 
 
