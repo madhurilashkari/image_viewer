@@ -307,7 +307,7 @@ class Profile extends Component {
                       {this.state.openedPostObj.caption}
                     </Typography>
                     <Typography style={{ color: '#4dabf5', marginLeft: '5px' }} component="p" >
-                      #Coding #Skills #Passion
+                      #Indian #Festival #Rangoli
                     </Typography>
                     {this.state.comments.hasOwnProperty(this.state.openedPostObj.id) && this.state.comments[this.state.openedPostObj.id].map((comment, index) => {
                       return (

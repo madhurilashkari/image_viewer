@@ -39,7 +39,7 @@ class Home extends Component {
   }
 
   //Fetch Instagram Data Using AJAX Calls
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     let data = null;
     let xhr = new XMLHttpRequest();
     let that = this;
@@ -101,8 +101,7 @@ class Home extends Component {
     this.setState({
       postDescription: posts
     })
-    console.log("selected posts " + filteredPost)
-    console.log("postDetails " + this.state.postDetails)
+
     let postInfo = this.state.postDetailsCopy
     //Filter Post Details
     postInfo = postInfo.filter(item => filteredPost.includes(item.id));
