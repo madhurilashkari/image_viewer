@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import "./Header.css";
 import Input from "@material-ui/core/Input";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -33,32 +33,77 @@ const Header = (props) => {
     props.history.push("/");
   };
 
-      return (
-        <div>
-        <header>
-          <div className="app-header">
-            <span className="app-logo" onClick={() => { onClickLogoHandler() }}>{props.title}</span>
-            {props.showHomePage === "home" && (
-              <div className="app-right">
-                <Input
-                  id="search-box"
-                  type="search"
-                  className="search-field"
-                  variant="outlined"
-                  placeholder="Search…"
-                  onChange={(e) => { props.searchHandler(e.target.value) }}
-                  startAdornment={
-                    <InputAdornment
-                      variant="standard"
-                      position="start"
-                      id="searchBoxIcon"
-                      style={{ backgroundColor: "#c0c0c0" }}
-                    >
-                      <SearchOutlinedIcon />
-                    </InputAdornment>
-                  }
-                  disableUnderline={true}
-                />
+  return (
+    <div>
+      <header>
+        <div className="app-header">
+          <span className="app-logo" onClick={() => { onClickLogoHandler() }}>{props.title}</span>
+          {props.showHomePage === "home" && (
+            <div className="app-right">
+              <Input
+                id="search-box"
+                type="search"
+                className="search-field"
+                variant="outlined"
+                placeholder="Search…"
+                onChange={(e) => { props.searchHandler(e.target.value) }}
+                startAdornment={
+                  <InputAdornment
+                    variant="standard"
+                    position="start"
+                    id="searchBoxIcon"
+                    style={{ backgroundColor: "#c0c0c0" }}
+                  >
+                    <SearchOutlinedIcon />
+                  </InputAdornment>
+                }
+                disableUnderline={true}
+              />
+              <Avatar
+                alt="Remy Sharp"
+                src={instaLogo}
+                className="icon-large"
+                onClick={handleClick}
+              />
+              <Menu
+                id="fade-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem
+                  style={{
+                    fontSize: "medium",
+                    fontWeight: "bold",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
+                    profileClickHandler();
+                  }}
+                >
+                  My account
+                </MenuItem>
+                <hr className="menu-line" />
+                <MenuItem
+                  style={{
+                    fontSize: "medium",
+                    fontWeight: "bold",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
+                    logoutClickHandler();
+                  }}
+                >
+                  Logout
+                </MenuItem>
+              </Menu>
+            </div>
+          )}
+
+          {
+            props.showProfilePage === "profile" && (
+              <div className="header-right">
                 <Avatar
                   alt="Remy Sharp"
                   src={instaLogo}
@@ -79,19 +124,6 @@ const Header = (props) => {
                       cursor: "pointer"
                     }}
                     onClick={() => {
-                      profileClickHandler();
-                    }}
-                  >
-                    My account
-                  </MenuItem>
-                  <hr className="menu-line" />
-                  <MenuItem
-                    style={{
-                      fontSize: "medium",
-                      fontWeight: "bold",
-                      cursor: "pointer"
-                    }}
-                    onClick={() => {
                       logoutClickHandler();
                     }}
                   >
@@ -100,11 +132,12 @@ const Header = (props) => {
                 </Menu>
               </div>
             )}
-            
-          </div>
-        </header>
-      </div>
-    );
-  };  
+
+
+        </div>
+      </header>
+    </div>
+  );
+};
 
 export default Header
